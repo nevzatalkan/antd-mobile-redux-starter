@@ -1,4 +1,5 @@
-## antd-mobile demo
+## antd-mobile demo with redux and login page
+home page contains search component, drawer and a list
 
 ### environment
 
