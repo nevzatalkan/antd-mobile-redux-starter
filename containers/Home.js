@@ -65,7 +65,7 @@ class Home extends React.Component {
   renderContent(pageText) {
     return (
       <div style={{ backgroundColor: 'white', height: '100%', textAlign: 'center' }}>
-        <div style={{ paddingTop: 60 }}>你已点击“{pageText}” tab， 当前展示“{pageText}”信息</div>
+        <div style={{ paddingTop: 60 }}>{pageText}</div>
         <a style={{ display: 'block', marginTop: 40, marginBottom: 600, color: '#108ee9' }} onClick={(e) => {
           e.preventDefault();
           this.setState({
@@ -86,11 +86,11 @@ class Home extends React.Component {
           return (<List.Item key={index}
             thumb="https://zos.alipayobjects.com/rmsportal/eOZidTabPoEbPeU.png"
             multipleLine
-          >分类</List.Item>);
+          >Drawer Menu</List.Item>);
         }
         return (<List.Item key={index}
           thumb="https://zos.alipayobjects.com/rmsportal/eOZidTabPoEbPeU.png"
-        >分类{index}</List.Item>);
+        >Menu{index}</List.Item>);
       })}
     </List>);
 
@@ -108,8 +108,8 @@ class Home extends React.Component {
         hidden={this.state.hidden}
       >
         <TabBar.Item
-          title="生活"
-          key="生活"
+          title="Home"
+          key="home"
           icon={<div style={{
             width: '0.44rem',
             height: '0.44rem',
@@ -122,32 +122,32 @@ class Home extends React.Component {
             background: 'url(https://zos.alipayobjects.com/rmsportal/iSrlOTqrKddqbOmlvUfq.svg) center center /  0.42rem 0.42rem no-repeat' }}
           />
           }
-          selected={this.state.selectedTab === 'blueTab'}
+          selected={this.state.selectedTab === 'home'}
           badge={1}
           onPress={() => {
             this.setState({
-              selectedTab: 'blueTab',
+              selectedTab: 'home',
             });
           }}
           data-seed="logId"
         >
-          {this.renderContent('生活')}
+          {this.renderContent('Home')}
         </TabBar.Item>
         <TabBar.Item
           icon={<Icon type="koubei-o" size="md" />}
           selectedIcon={<Icon type="koubei" size="md" />}
-          title="口碑"
-          key="口碑"
+          title="Tab2"
+          key="tab2"
           badge={'new'}
-          selected={this.state.selectedTab === 'redTab'}
+          selected={this.state.selectedTab === 'tab2'}
           onPress={() => {
             this.setState({
-              selectedTab: 'redTab',
+              selectedTab: 'tab2',
             });
           }}
           data-seed="logId1"
         >
-          {this.renderContent('口碑')}
+          {this.renderContent('Tab2')}
         </TabBar.Item>
         <TabBar.Item
           icon={
@@ -164,31 +164,31 @@ class Home extends React.Component {
               background: 'url(https://zos.alipayobjects.com/rmsportal/IIRLrXXrFAhXVdhMWgUI.svg) center center /  0.42rem 0.42rem no-repeat' }}
             />
           }
-          title="朋友"
-          key="朋友"
+          title="Tab3"
+          key="tab3"
           dot
-          selected={this.state.selectedTab === 'greenTab'}
+          selected={this.state.selectedTab === 'tab3'}
           onPress={() => {
             this.setState({
-              selectedTab: 'greenTab',
+              selectedTab: 'tab3',
             });
           }}
         >
-          {this.renderContent('朋友')}
+          {this.renderContent('Tab3')}
         </TabBar.Item>
         <TabBar.Item
           icon={{ uri: 'https://zos.alipayobjects.com/rmsportal/asJMfBrNqpMMlVpeInPQ.svg' }}
           selectedIcon={{ uri: 'https://zos.alipayobjects.com/rmsportal/gjpzzcrPMkhfEqgbYvmN.svg' }}
-          title="我的"
-          key="我的"
-          selected={this.state.selectedTab === 'yellowTab'}
+          title="Tab4"
+          key="tab4"
+          selected={this.state.selectedTab === 'tab4'}
           onPress={() => {
             this.setState({
-              selectedTab: 'yellowTab',
+              selectedTab: 'tab4',
             });
           }}
         >
-          {this.renderContent('我的')}
+          {this.renderContent('Tab4')}
         </TabBar.Item>
       </TabBar>
     );
